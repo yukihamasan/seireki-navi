@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>和暦⇒西暦変換アプリ</title>
+    <link rel="manifest" href="manifest.json">
+    <style>
+        :root {
+            --abashiri-blue: #007bbb;
+            --ice-white: #f0f8ff;
+        }
+        body {
+            font-family: sans-serif;
+            background-color: var(--ice-white);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+            border: 4px solid var(--abashiri-blue);
+        }
+        .icon-area img {
+            width: 100px;
+            margin-bottom: 10px;
+        }
+        select, input {
+            width: 100%;
+            padding: 12px;
+            font-size: 1.2rem;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+        .result-box {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 10px;
+        }
+        .ad-year {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--abashiri-blue);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="icon-area">
+        <img src="nipone.png" alt="ニポネ">
+    </div>
+    <h1>和暦⇒西暦変換アプリ</h1>
+    
+    <select id="eraSelect" onchange="convertAD()">
+        <option value="2019">令和</option>
+        <option value="1989">平成</option>
+        <option value="1926">昭和</option>
+        <option value="1912">大正</option>
+        <option value="1868">明治</option>
+    </select>
+
+    <input type="number" id="eraYearInput" placeholder="年を入力 (例: 8)" oninput="convertAD()">
+
+    <div class="result-box">
+        <span id="adResult" class="ad-year">---</span>
+    </div>
+    <p style="font-size: 0.8rem; color: #666; margin-top: 10px;">「元」年は「1」と入力してください</p>
+</div>
+
+<script>
+    function convertAD() {
+        const baseYear = parseInt(document.getElementById('eraSelect').value);
+        const eraYear = document.getElementById('eraYearInput').value;
+        const result = document.getElementById('adResult');
+
+        if (!eraYear || eraYear < 1) {
+            result.textContent = "---";
+            return;
+        }
+
+        const adYear = baseYear + parseInt(eraYear) - 1;
+        result.textContent = "西暦 " + adYear + " 年";
+    }
+</script>
+
+</body>
+</html>
