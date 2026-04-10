@@ -1,0 +1,38 @@
+{
+  "name": "西暦⇒和暦変換アプリ",
+  "short_name": "和暦変換",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#f0f8ff",
+  "theme_color": "#007bbb",
+  "icons": [
+    {
+      "src": "nipone.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "nipone.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "nipone.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "西暦⇒和暦変換アプリの画面"
+    },
+    {
+      "src": "nipone.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "西暦⇒和暦変換アプリの画面"
+    }
+  ]
+}
