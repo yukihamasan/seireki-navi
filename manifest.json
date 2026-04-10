@@ -1,6 +1,6 @@
 {
   "name": "西暦⇒和暦変換アプリ",
-  "short_name": "西暦変換",
+  "short_name": "和暦変換",
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#f0f8ff",
